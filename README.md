@@ -2,9 +2,9 @@
 
 # [xxAI.art](https://xxAI.art)
 
-The front-end code of the website is open source, welcome to help optimize the translation
+The frontend code of the website is open source, welcome to help optimize the translation
 
-* [front-end code](https://github.com/xxai-art/web)
+* [Frontend Code](https://github.com/xxai-art/web)
 * [Language packs for the site as a whole](https://github.com/xxai-art/web/tree/main/i18n)
 * [Language packs for login modules](https://github.com/wacpkg/user/tree/main/ui.i18n)
 * [Website Multilingual Documentation](https://github.com/xxai-doc)
