@@ -28,3 +28,49 @@ Build on the following 3 projects
 * [@w5/i18n](https://www.npmjs.com/package/@w5/i18n)
 
   Language files for translating `yaml` generated websites.
+
+### Document Translation Automation Instructions
+
+See repository [xxai-art/doc](https://github.com/xxai-art/doc)
+
+It is recommended to install nodejs, [direnv](https://direnv.net) and [bun](https://github.com/oven-sh/bun) first, and then run `direnv allow` after entering the directory.
+
+In order to avoid overly large warehouses translated into hundreds of languages, I created a separate code warehouse for each language and created an organization to store this warehouse
+
+Setting the environment variable `GITHUB_ACCESS_TOKEN` and then running [create.github.coffee](https://github.com/xxai-art/doc/blob/main/create.github.coffee) will automatically create the warehouse.
+
+Of course, you can also put it in a warehouse.
+
+Translation script reference [run.sh](https://github.com/xxai-art/doc/blob/main/run.sh)
+
+The script code is interpreted as follows:
+
+[bunx](https://bun.sh/docs/cli/bunx) is a replacement for npx, which is faster. Of course, if you don't have bun installed, you can use `npx` instead.
+
+`bunx mdt zh` renders `.mdt` in the zh directory as `.md` , see the 2 linked files below
+
+* [coffee_plus.mdt](https://github.com/xxai-doc/zh/blob/main/coffee_plus.mdt)
+* [coffee_plus.md](https://github.com/xxai-doc/zh/blob/main/coffee_plus.md)
+
+`bunx i18n` is the core code for translation (if you only have `nodejs` installed, but `bun` and `direnv` are not installed, you can also run `npx i18n` to translate).
+
+It will parse [i18n.yml](https://github.com/xxai-art/doc/blob/main/i18n.yml) , the configuration of `i18n.yml` in this document is as follows:
+
+```
+en:
+zh: ja ko en
+```
+
+The meaning is:
+
+Chinese is translated into Japanese, Korean, and English, and English is translated into all other languages. If you only want to support Chinese and English, you can just write `zh: en` .
+
+The last is [gen.README.coffee](https://github.com/xxai-art/doc/blob/main/gen.README.coffee) , which extracts the content between the main title and the first subtitle of each language's `README.md` to generate an entry `README.md` . The code is very simple, you can look at it yourself.
+
+Google API is used for free translation. If you cannot access Google, please configure and set a proxy, such as:
+
+```
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+```
+
+The translation script will generate a translation cache in `.i18n` directory, please check it with `git status` and add it to the code repository to avoid repeated translations.
