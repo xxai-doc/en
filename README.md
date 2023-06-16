@@ -1,8 +1,8 @@
 <p align="center"><a href="https://xxai.art"><img src="https://cdn.jsdelivr.net/gh/xxai-art/doc/logo.svg"/></a><br/><a href="https://xxai.art"><img src="https://cdn.jsdelivr.net/gh/xxai-art/doc/xxai.svg"/></a></p><p align="center"><a href="https://github.com/xxai-art/doc#readme"><img alt="I18N" src="https://cdn.jsdelivr.net/gh/wactax/img/t.svg"/></a>　<a href="https://groups.google.com/u/0/g/xxai-art"><img alt="Google Groups" src="https://cdn.jsdelivr.net/gh/wactax/img/g-groups.svg"/></a></p>
 
-# xxAI.art
+It is recommended to install nodejs, [direnv](https://direnv.net) , [bun](https://github.com/oven-sh/bun) first, and then `direnv allow` after entering the directory ( [the .envrc](https://github.com/xxai-art/doc/blob/main/.envrc) will be executed automatically after entering the directory).
 
-Part of the website code is open source, welcome to help optimize the translation.
+The meaning is: Chinese translation to Japanese, Korean, English, English translation to all other languages. If you only want to support Chinese and English, you can just write `zh: en` .
 
 ## front-end code
 
@@ -31,15 +31,15 @@ Build on the following 3 projects
 
 ### Document Translation Automation Instructions
 
-See repository [xxai-art/doc](https://github.com/xxai-art/doc)
+See code repository [xxai-art/doc](https://github.com/xxai-art/doc)
 
-It is recommended to install nodejs, [direnv](https://direnv.net) and [bun](https://github.com/oven-sh/bun) first, and then run `direnv allow` after entering the directory.
+It is recommended to install nodejs, [direnv](https://direnv.net) , [bun](https://github.com/oven-sh/bun) first, and then `direnv allow` after entering the directory ( [the .envrc](https://github.com/xxai-art/doc/blob/main/.envrc) will be executed automatically after entering the directory).
 
-In order to avoid overly large warehouses translated into hundreds of languages, I created a separate code warehouse for each language and created an organization to store this warehouse
+In order to avoid the large code base translated into hundreds of languages, I created a separate code base for each language and created an organization to store the code base
 
-Setting the environment variable `GITHUB_ACCESS_TOKEN` and then running [create.github.coffee](https://github.com/xxai-art/doc/blob/main/create.github.coffee) will automatically create the warehouse.
+Setting the environment variable `GITHUB_ACCESS_TOKEN` and then running [create.github.coffee](https://github.com/xxai-art/doc/blob/main/create.github.coffee) will automatically create the code repository.
 
-Of course, you can also put it in a warehouse.
+Of course, you can also put it in a code base.
 
 Translation script reference [run.sh](https://github.com/xxai-art/doc/blob/main/run.sh)
 
@@ -71,4 +71,8 @@ Google API is used for free translation. If you cannot access Google, please con
 export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 ```
 
-The translation script will generate a translation cache in `.i18n` directory, please check it with `git status` and add it to the code repository to avoid repeated translations.
+The translation script will generate a translated cache in `.i18n` directory, please check it with `git status` and add it to the code repository to avoid repeated translations.
+
+Please run `bunx i18n` every time you modify the translation to update the cache.
+
+If the original text and the translation are modified at the same time, the cache will be confused, so if you want to modify, you can only modify one, and then run `bunx i18n` to update the cache.
