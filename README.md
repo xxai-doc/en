@@ -61,9 +61,7 @@ en:
 zh: ja ko en
 ```
 
-The meaning is:
-
-Chinese is translated into Japanese, Korean, and English, and English is translated into all other languages. If you only want to support Chinese and English, you can just write `zh: en` .
+The meaning is: Chinese translation to Japanese, Korean, English, English translation to all other languages. If you only want to support Chinese and English, you can just write `zh: en` .
 
 The last is [gen.README.coffee](https://github.com/xxai-art/doc/blob/main/gen.README.coffee) , which extracts the content between the main title and the first subtitle of each language's `README.md` to generate an entry `README.md` . The code is very simple, you can look at it yourself.
 
