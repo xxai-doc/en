@@ -17,14 +17,14 @@ The front-end programming language is [@w5/coffee_plus](http://npmjs.com/@w5/cof
 
 Build on the following 3 projects
 
-### [@w5/mdt](https://www.npmjs.com/package/@w5/mdt)
+* [@w5/mdt](https://www.npmjs.com/package/@w5/mdt)
 
-The markdown template, with the suffix `.mdt` , can refer to external files with a syntax similar to `<+ ./coffee_plus/import.js>` .
+  The suffix is `.mdt` , you can use the syntax similar to `<+ ./coffee_plus/import.js>` to refer to external files, and generate markdown with the suffix `.md` .
 
-[@w5/trmd](https://www.npmjs.com/package/@w5/trmd)
+* [@w5/trmd](https://www.npmjs.com/package/@w5/trmd)
 
-Markdown translation will not translate codes and links, and will cache translated sentences. If the translation is modified but the original text is not modified, executing it again will not overwrite the modification of the translation.
+  Markdown translation will not translate codes and links, and will cache translated sentences. If the translation is modified but the original text is not modified, executing it again will not overwrite the modification of the translation.
 
-[@w5/i18n](https://www.npmjs.com/package/@w5/i18n)
+* [@w5/i18n](https://www.npmjs.com/package/@w5/i18n)
 
-Language files for translating `yaml` generated websites.
+  Language files for translating `yaml` generated websites.
